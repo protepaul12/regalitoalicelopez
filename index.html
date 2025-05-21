@@ -1,125 +1,104 @@
-import { useState } from 'react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Alice 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'UnifrakturCook', cursive, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .boton, .enlace {
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 1.5rem;
+      border: 3px solid purple;
+      background-color: transparent;
+      color: purple;
+      cursor: pointer;
+      box-shadow: 0 0 10px purple;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+      margin: 0.5rem;
+    }
+    .boton:hover, .enlace:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px violet;
+    }
+    .carta {
+      background: linear-gradient(to bottom right, #121212, #000);
+      border-radius: 2rem;
+      padding: 2.5rem;
+      max-width: 600px;
+      box-shadow: 0 0 30px purple;
+      color: #d6bbf5;
+      line-height: 1.6;
+      display: none;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: purple;
+      text-shadow: 0 0 5px purple;
+    }
+  </style>
+</head>
+<body>
 
-export default function App() {
-  const [abierta, setAbierta] = useState(false);
+  <button id="abrir" class="boton">Abrir carta 💌</button>
 
-  return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: 'black',
-      color: 'white',
-      fontFamily: "'UnifrakturCook', cursive, Arial, sans-serif",
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '2rem',
-      flexDirection: 'column',
-      textAlign: 'center',
-      userSelect: 'text',
-    }}>
-      {!abierta ? (
-        <button
-          onClick={() => setAbierta(true)}
-          style={{
-            fontSize: '2.5rem',
-            padding: '1rem 3rem',
-            borderRadius: '1.5rem',
-            border: '3px solid purple',
-            backgroundColor: 'transparent',
-            color: 'purple',
-            cursor: 'pointer',
-            boxShadow: '0 0 10px purple',
-            userSelect: 'none',
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
-          onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-        >
-          Abrir carta 💌
-        </button>
-      ) : (
-        <div style={{
-          background: 'linear-gradient(to bottom right, #121212, #000)',
-          borderRadius: '2rem',
-          padding: '2.5rem',
-          maxWidth: '600px',
-          boxShadow: '0 0 30px purple',
-          color: '#d6bbf5',
-          lineHeight: 1.5,
-          userSelect: 'text',
-        }}>
-          <h1 style={{
-            fontSize: '3rem',
-            marginBottom: '1rem',
-            color: 'purple',
-            textShadow: '0 0 5px purple',
-            userSelect: 'text',
-          }}>
-            Mi querida Alice
-          </h1>
-          <p style={{ marginBottom: '1.2rem' }}>
-            Entre las sombras de la noche eterna,<br />
-            nace este suspiro, oscuro y sincero.<br />
-            Palabras tejidas con hilos de luna,<br />
-            para tu alma, dulce y certero.
-          </p>
-          <p style={{ marginBottom: '1.2rem' }}>
-            Este lazo gótico que hoy se revela,<br />
-            envuelto en misterio y dulce pasión,<br />
-            guardará en su eco nuestra promesa<br />
-            de un amor que trasciende la razón.
-          </p>
-          <p style={{ marginBottom: '1.8rem' }}>
-            Que cada letra sea un espejo tenue,<br />
-            de nuestros sueños y anhelos sin fin.<br />
-            Y al cerrar este verso, mi Alice amada,<br />
-            mi corazón siempre te hará latir.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <button
-              onClick={() => setAbierta(false)}
-              style={{
-                padding: '0.8rem 2rem',
-                borderRadius: '1rem',
-                border: '2px solid purple',
-                backgroundColor: 'transparent',
-                color: 'purple',
-                cursor: 'pointer',
-                fontSize: '1rem',
-                boxShadow: '0 0 10px purple',
-                userSelect: 'none',
-                transition: 'all 0.3s ease',
-              }}
-              onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-              onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-            >
-              Cerrar Carta
-            </button>
-            <a
-              href="https://youtu.be/jrJD6uixHro?si=N-E7HY4jfTvAAm9b"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                padding: '0.8rem 2rem',
-                borderRadius: '1rem',
-                border: '2px solid purple',
-                color: 'purple',
-                fontSize: '1rem',
-                textDecoration: 'none',
-                boxShadow: '0 0 10px purple',
-                userSelect: 'none',
-                transition: 'all 0.3s ease',
-                display: 'inline-block',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-              onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-            >
-              Ver video
-            </a>
-          </div>
-        </div>
-      )}
+  <div id="carta" class="carta">
+    <h1>Mi querida Alice</h1>
+    <p>
+      Entre las sombras de la noche eterna,<br />
+      nace este suspiro, oscuro y sincero.<br />
+      Palabras tejidas con hilos de luna,<br />
+      para tu alma, dulce y certero.
+    </p>
+    <p>
+      Este lazo gótico que hoy se revela,<br />
+      envuelto en misterio y dulce pasión,<br />
+      guardará en su eco nuestra promesa<br />
+      de un amor que trasciende la razón.
+    </p>
+    <p>
+      Que cada letra sea un espejo tenue,<br />
+      de nuestros sueños y anhelos sin fin.<br />
+      Y al cerrar este verso, mi Alice amada,<br />
+      mi corazón siempre te hará latir.
+    </p>
+    <div style="margin-top: 2rem;">
+      <button id="cerrar" class="boton">Cerrar carta</button>
+      <a class="enlace" href="https://youtu.be/jrJD6uixHro?si=N-E7HY4jfTvAAm9b" target="_blank">Ver video</a>
     </div>
-  );
-}
+  </div>
+
+  <script>
+    const abrir = document.getElementById("abrir");
+    const cerrar = document.getElementById("cerrar");
+    const carta = document.getElementById("carta");
+
+    abrir.addEventListener("click", () => {
+      abrir.style.display = "none";
+      carta.style.display = "block";
+    });
+
+    cerrar.addEventListener("click", () => {
+      carta.style.display = "none";
+      abrir.style.display = "inline-block";
+    });
+  </script>
+
+</body>
+</html>
